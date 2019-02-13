@@ -48,10 +48,10 @@ Allows us to see relationships between two and more different variables.
     
 ![](https://i.imgur.com/OI6CxnH.png)
 
-    ```
-    sns.jointplot('Total day minutes', 'Total night minutes', data=df,
-                  kind="kde", color="g");
-    ```
+```
+sns.jointplot('Total day minutes', 'Total night minutes', data=df,
+              kind="kde", color="g");
+```
     
 ![](https://i.imgur.com/YvQ5q3F.png)
 
@@ -80,6 +80,10 @@ Interactions between the numerical and categorical features.
                col_wrap=2, height=3, aspect=.9);
     ```
 ![](https://i.imgur.com/NxCOL3Z.png)
+    
+   `catplot` can also be used to draw bar plots (with kind='bar').
+
+![](https://i.imgur.com/1QHvakQ.png)
 
 ### 2.3 Categorical–Categorical
 Interactions between the numerical and categorical features.
