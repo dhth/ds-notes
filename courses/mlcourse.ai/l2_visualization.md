@@ -18,11 +18,12 @@ Table of Contents
             * [scatter plot](#scatter-plot)
             * [scatter plot matrix](#scatter-plot-matrix)
          * [2.2 Quantitative–Categorical](#22-quantitativecategorical)
+            * [boxplot_q_c](#boxplot_q_c)
             * [lmplot](#lmplot)
             * [catplot](#catplot)
          * [2.3 Categorical–Categorical](#23-categoricalcategorical)
             * [countplot](#countplot)
-            
+
 ## 1. Univariate
 When we analyze a feature independently, we are usually mostly interested in the distribution of its values and ignore the other variables in the dataset.
 
@@ -45,13 +46,19 @@ smoothed version of a histogram, doesn't depend on the size of bins.
 #### boxplot
 The box by itself illustrates the interquartile spread of the distribution; its length is determined by the 25th and 75th percentiles. The vertical line inside the box marks the median `50%` of the distribution. The individual points outside the box are outliers.
 
+```
+sns.boxplot(dataframe['quantitative_feature'])
+```
+
 ![](https://i.imgur.com/go05oFJ.png)
 
 ### 1.2 Categorical features
 #### barplot
 Simplest way to visualize frequency count of categorical variables.
 
-```sns.countplot(x='Churn', data=df)```
+```
+sns.barplot(x='Churn', y='Total day minutes', data=df)
+```
 ![](https://i.imgur.com/A3jNbZC.png)
 
 ## 2. Multivariate
@@ -93,11 +100,18 @@ sns.pairplot(df[features]);
 ### 2.2 Quantitative–Categorical
 Interactions between the numerical and categorical features.
 
+#### boxplot_q_c
+`boxplot` with separate `x` and `y` parameters can show distribution of quantitative feature `y` for different values of categorical feature `x`.
+
+```sns.boxplot(x='Churn', y='Total day minutes', data=df)
+```
+![](https://i.imgur.com/2V5AGLN.png)
+
 #### lmplot
 scatter plot of two numerical features with an additional categorical feature which can be color or size coded.
 
 ```
-sns.pairplot(df[features]);
+sns.lmplot(df[features]);
 ```
 ![](https://i.imgur.com/rsUQ2Bj.png)
 
