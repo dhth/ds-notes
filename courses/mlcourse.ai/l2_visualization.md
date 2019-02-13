@@ -1,4 +1,5 @@
 # Visualization Notes
+Notes based on Topic 2 of [mlcourse.ai](https://mlcourse.ai/).
 
 ## 1. Univariate
 When we analyze a feature independently, we are usually mostly interested in the distribution of its values and ignore the other variables in the dataset.
@@ -23,4 +24,69 @@ When we analyze a feature independently, we are usually mostly interested in the
 
 ### 1.2 Categorical features
 - **barplot**: Simplest way to visualize frequency count of categorical variables.
+    
+    ```sns.countplot(x='Churn', data=df)```
 ![](https://i.imgur.com/A3jNbZC.png)
+
+## 2. Multivariate
+Allows us to see relationships between two and more different variables.
+
+### 2.1 Quantitative-Quantitative
+- **correlation matrix**: 
+    
+    ```
+    corr_matrix = df[features].corr()
+    sns.heatmap(corr_matrix)
+    ```
+![](https://i.imgur.com/Hj4FF40.png)
+- **scatter plot**: displays values of two numerical variables as *Cartesian coordinates* in 2D/3d space. Seaborn let's us plot scatter along with histograms/density plots along the axis.
+
+    ```
+    sns.jointplot(x='Total day minutes', y='Total night minutes', 
+              data=df, kind='scatter');
+    ```
+    
+![](https://i.imgur.com/OI6CxnH.png)
+
+    ```
+    sns.jointplot('Total day minutes', 'Total night minutes', data=df,
+                  kind="kde", color="g");
+    ```
+    
+![](https://i.imgur.com/YvQ5q3F.png)
+
+- **scatter plot matrix**: scatterplot matrix of all variables.
+
+    ```
+    sns.pairplot(df[features]);
+    ```
+![](https://i.imgur.com/1e1BjMu.png)
+
+### 2.2 Quantitative–Categorical
+Interactions between the numerical and categorical features.
+
+- **lmplot**: scatter plot of two numerical features with an additional categorical feature which can be color or size coded.
+
+    ```
+    sns.pairplot(df[features]);
+    ```
+![](https://i.imgur.com/rsUQ2Bj.png)
+
+- **catplot**: analyse a numerical variable (`Total day minutes`) in two categorical dimensions at once (`Customer service calls` and `churn`)
+
+    ```
+    sns.catplot(x='Churn', y='Total day minutes', col='Customer service calls',
+               data=df[df['Customer service calls'] < 4], kind="box",
+               col_wrap=2, height=3, aspect=.9);
+    ```
+![](https://i.imgur.com/NxCOL3Z.png)
+
+### 2.3 Categorical–Categorical
+Interactions between the numerical and categorical features.
+
+- **countplot**: frequency count of a categorical feature along with another categorical feature as `hue`.
+
+    ```
+    sns.countplot(x='Customer service calls', hue='Churn', data=df);
+    ```
+![](https://i.imgur.com/p0lCqPr.png)
