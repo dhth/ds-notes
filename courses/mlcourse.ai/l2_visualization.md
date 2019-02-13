@@ -20,3 +20,7 @@ When we analyze a feature independently, we are usually mostly interested in the
 - **boxplot**: The box by itself illustrates the interquartile spread of the distribution; its length is determined by the 25th and 75th percentiles. The vertical line inside the box marks the median `50%` of the distribution. The individual points outside the box are outliers.
 
 ![](https://i.imgur.com/go05oFJ.png)
+
+### 1.2 Categorical features
+- **barplot**: Simplest way to visualize frequency count of categorical variables.
+![](https://i.imgur.com/A3jNbZC.png)
