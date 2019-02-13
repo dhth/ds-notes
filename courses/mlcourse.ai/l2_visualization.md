@@ -1,6 +1,28 @@
 # Visualization Notes
 Notes based on Topic 2 of [mlcourse.ai](https://mlcourse.ai/).
 
+Table of Contents
+=================
+
+   * [Visualization Notes](#visualization-notes)
+      * [1. Univariate](#1-univariate)
+         * [1.1 Quantitative features (numerical)](#11-quantitative-features-numerical)
+            * [histogram](#histogram)
+            * [kernel density plot](#kernel-density-plot)
+            * [boxplot](#boxplot)
+         * [1.2 Categorical features](#12-categorical-features)
+            * [barplot](#barplot)
+      * [2. Multivariate](#2-multivariate)
+         * [2.1 Quantitative-Quantitative](#21-quantitative-quantitative)
+            * [correlation matrix](#correlation-matrix)
+            * [scatter plot](#scatter-plot)
+            * [scatter plot matrix](#scatter-plot-matrix)
+         * [2.2 Quantitative–Categorical](#22-quantitativecategorical)
+            * [lmplot](#lmplot)
+            * [catplot](#catplot)
+         * [2.3 Categorical–Categorical](#23-categoricalcategorical)
+            * [countplot](#countplot)
+            
 ## 1. Univariate
 When we analyze a feature independently, we are usually mostly interested in the distribution of its values and ignore the other variables in the dataset.
 
