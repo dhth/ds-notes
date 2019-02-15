@@ -71,7 +71,7 @@ Allows us to see relationships between two and more different variables.
 corr_matrix = df[features].corr()
 sns.heatmap(corr_matrix)
 ```
-![](https://i.imgur.com/Hj4FF40.png)
+![](https://i.imgur.com/pxbKeG4.png)
 #### scatter plot
 displays values of two numerical variables as *Cartesian coordinates* in 2D/3d space. Seaborn let's us plot scatter along with histograms/density plots along the axis.
 
@@ -103,9 +103,19 @@ Interactions between the numerical and categorical features.
 #### boxplot_q_c
 `boxplot` with separate `x` and `y` parameters can show distribution of quantitative feature `y` for different values of categorical feature `x`.
 
-```sns.boxplot(x='Churn', y='Total day minutes', data=df)
 ```
-![](https://i.imgur.com/2V5AGLN.png)
+sns.boxplot(x='gender',y='height',data=df)
+```
+![](https://i.imgur.com/634v0Xk.png)
+
+`hue` can be added to boxplot.
+
+```
+sns.boxplot(x='gender',y='height',hue='gender', data=df)
+```
+
+![](https://i.imgur.com/tnt1UgL.png)
+
 
 #### lmplot
 scatter plot of two numerical features with an additional categorical feature which can be color or size coded.
