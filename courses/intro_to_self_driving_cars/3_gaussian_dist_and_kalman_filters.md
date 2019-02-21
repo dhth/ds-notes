@@ -6,7 +6,9 @@ Variance relates to confusion and certainity.
 
 Wider gaussian curve -> higher variance -> higher confusion --> lower certainity
 
-Narrower gaussian curve -> lower variance -> lower confusion --> higher certainity
+Narrower gaussian curve -> lower varia
+
+Kalman filters is that they combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.nce -> lower confusion --> higher certainity
 
 # Kalman Filters
 
@@ -23,3 +25,5 @@ Posterior peak is higher as measurement increases certainity.
 ![](https://i.imgur.com/qRo4qlw.png)
 
 Prediction peak is lower as there's uncertainity involved with motion.
+
+Kalman filters combine somewhat inaccurate sensor measurements with somewhat inaccurate predictions of motion to get a filtered location estimate that is better than any estimates that come from only sensor readings or only knowledge about movement.
